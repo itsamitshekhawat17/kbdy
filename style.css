@@ -19,6 +19,8 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ========================================== */
@@ -223,7 +225,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 15px;
     position: relative;
     opacity: 0;
     pointer-events: none;
@@ -1183,44 +1185,70 @@ body {
 /* ========================================== */
 
 @media (max-width: 768px) {
+    .section {
+        padding: 15px 10px;
+    }
+
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
     }
 
     .gate-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 
     .gate-text {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        line-height: 1.8;
     }
 
     .gate-card {
-        padding: 50px 35px;
-        min-height: 45vh;
+        padding: 40px 30px;
+        min-height: auto;
+        width: 95%;
     }
 
     .landing-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .landing-title .word {
+        display: inline-block;
+    }
+
+    .landing-subtitle {
+        font-size: 1.1rem;
     }
 
     .photo-frame {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
 
     .love-machine-card {
         padding: 30px 20px;
-        min-height: 45vh;
+        min-height: auto;
+        width: 95%;
     }
 
     .love-message {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+        line-height: 1.6;
+    }
+
+    .message-display {
+        min-height: 150px;
     }
 
     .puzzle-card {
-        padding: 35px 25px;
-        min-height: 45vh;
+        padding: 30px 20px;
+        min-height: auto;
+        width: 95%;
+    }
+
+    .puzzle-reference-label {
+        font-size: 1rem;
     }
 
     .reference-image {
@@ -1239,18 +1267,28 @@ body {
     }
 
     .wheel-card {
-        padding: 35px 25px;
-        min-height: 45vh;
+        padding: 30px 20px;
+        min-height: auto;
+        width: 95%;
     }
 
     #wheelCanvas {
-        width: 380px;
-        height: 380px;
+        width: 320px;
+        height: 320px;
     }
 
     .wheel-pointer {
-        font-size: 2.5rem;
-        top: -25px;
+        font-size: 2.2rem;
+        top: -22px;
+    }
+
+    .wheel-result {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    #wheelResultText {
+        font-size: 1.5rem;
     }
 
     .final-text {
@@ -1271,27 +1309,87 @@ body {
     }
 
     .btn-primary {
+        padding: 14px 35px;
+        font-size: 1.1rem;
+        min-height: 48px;
+    }
+
+    .btn-continue {
         padding: 12px 30px;
         font-size: 1rem;
+        min-height: 44px;
     }
 
     .modal-content {
         padding: 30px 20px;
-        margin: 0 20px;
+        margin: 0 15px;
+        width: 90%;
+        min-height: auto;
+    }
+
+    .modal-title {
+        font-size: 2.2rem;
+    }
+
+    .modal-text {
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
+    .section {
+        padding: 10px;
+    }
+
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .gate-title {
+        font-size: 2.2rem;
+    }
+
+    .gate-text {
+        font-size: 1.1rem;
+    }
+
+    .gate-card {
+        padding: 30px 20px;
+        width: 95%;
+    }
+
+    #gateBtn {
+        font-size: 1.2rem;
+        padding: 16px 40px;
     }
 
     .landing-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .landing-subtitle {
+        font-size: 1rem;
+    }
+
+    .photo-frame {
+        width: 150px;
+        height: 150px;
+    }
+
+    .love-machine-card {
+        padding: 25px 15px;
+        width: 95%;
+    }
+
+    .love-message {
+        font-size: 1.2rem;
     }
 
     .puzzle-card {
-        padding: 25px 15px;
+        padding: 20px 12px;
+        width: 95%;
     }
 
     .reference-image {
@@ -1311,23 +1409,89 @@ body {
     }
 
     .wheel-card {
-        padding: 25px 15px;
-        min-height: 40vh;
+        padding: 20px 12px;
+        width: 95%;
     }
 
     #wheelCanvas {
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
     }
 
     .wheel-pointer {
-        font-size: 2rem;
-        top: -20px;
+        font-size: 1.8rem;
+        top: -18px;
+    }
+
+    #wheelResultText {
+        font-size: 1.3rem;
+    }
+
+    .btn-primary {
+        padding: 12px 30px;
+        font-size: 1rem;
+        min-height: 44px;
+    }
+
+    .btn-continue {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+
+    .balloons-grid {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .wish-balloon {
+        font-size: 2.5rem;
+    }
+
+    .wish-message-text {
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        padding: 25px 15px;
+        margin: 0 10px;
+        width: 92%;
+    }
+
+    .modal-title {
+        font-size: 1.8rem;
+    }
+
+    .modal-text {
+        font-size: 1.1rem;
     }
 
     .slideshow-nav {
         width: 40px;
         height: 40px;
         font-size: 1.5rem;
+    }
+
+    .slideshow-image {
+        max-height: 60vh;
+    }
+
+    .slideshow-caption {
+        font-size: 1.2rem;
+    }
+
+    .final-text {
+        font-size: 1.1rem;
+    }
+
+    .heart-glow {
+        font-size: 5rem;
+    }
+
+    .highlight {
+        font-size: 1.6rem;
+    }
+
+    .final-signature {
+        font-size: 1.1rem;
     }
 }
