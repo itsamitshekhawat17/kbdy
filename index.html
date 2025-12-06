@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Khyati ❤️</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Decorations (Hearts & Butterflies) -->
+    <div class="background-decorations">
+        <div class="heart-float heart-1">❤️</div>
+        <div class="heart-float heart-2">💗</div>
+        <div class="heart-float heart-3">💖</div>
+        <div class="heart-float heart-4">💕</div>
+        <div class="heart-float heart-5">💝</div>
+        <div class="heart-float heart-6">💓</div>
+        <div class="butterfly-float butterfly-1">🦋</div>
+        <div class="butterfly-float butterfly-2">🦋</div>
+        <div class="butterfly-float butterfly-3">🦋</div>
+        <div class="star-sparkle star-1">✨</div>
+        <div class="star-sparkle star-2">✨</div>
+        <div class="star-sparkle star-3">✨</div>
+        <div class="star-sparkle star-4">✨</div>
+        <div class="star-sparkle star-5">✨</div>
+    </div>
+
+    <!-- Music Control (Hidden initially, shown after gate) -->
+    <div id="musicControl" class="music-control hidden">
+        <button id="musicToggle" aria-label="Toggle Music">🎵</button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SECTION 1: PRE-LANDING (GATE SCREEN) -->
+    <!-- ========================================== -->
+    <section id="gate" class="section active">
+        <div class="gate-container">
+            <div class="gate-card">
+                <h1 class="gate-title">Hey Khyati…</h1>
+                <p class="gate-text">
+                    I know today is your very special day…<br>
+                    I made something just for you 💖<br>
+                    Wanna see it?
+                </p>
+                <button id="gateBtn" class="btn-primary">
+                    Yes, Show Me 😳❤️
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 2: LANDING PAGE -->
+    <!-- ========================================== -->
+    <section id="landing" class="section hidden">
+        <!-- Floating Balloons -->
+        <div class="balloons-container">
+            <div class="balloon balloon-1" style="--delay: 0s;">🎈</div>
+            <div class="balloon balloon-2" style="--delay: 0.5s;">🎈</div>
+            <div class="balloon balloon-3" style="--delay: 1s;">🎈</div>
+            <div class="balloon balloon-4" style="--delay: 1.5s;">🎈</div>
+            <div class="balloon balloon-5" style="--delay: 2s;">🎈</div>
+        </div>
+
+        <div class="landing-content">
+            <!-- Photo Frame -->
+            <div class="photo-frame">
+                <img src="assets/khyati/Screenshot 2025-12-06 175954.png" alt="Khyati" class="birthday-photo">
+            </div>
+
+            <!-- Birthday Message -->
+            <h1 class="landing-title animate-title">
+                <span class="word word-1">Happy</span>
+                <span class="word word-2">Birthday</span>
+                <span class="word word-3">to</span>
+                <span class="word word-4">You,</span><br>
+                <span class="word word-5">My</span>
+                <span class="word word-6">Love</span>
+                <span class="word word-7">Khyati</span>
+                <span class="word word-8">❤️🎂</span>
+            </h1>
+            <p class="landing-subtitle">Today, 7 December, is all about you.</p>
+
+            <!-- Continue Button -->
+            <button class="btn-continue" data-target="love-machine">
+                Tap here to continue your surprise!<br>
+                <span class="btn-continue-text">Continue 💌</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 3: LOVE LETTER MACHINE -->
+    <!-- ========================================== -->
+    <section id="love-machine" class="section hidden">
+        <div class="section-container">
+            <h2 class="section-title">Every click = A message from my heart 💌</h2>
+            
+            <div class="love-machine-card">
+                <div class="message-display">
+                    <p id="loveMessage" class="love-message">Click the button below to reveal my feelings...</p>
+                </div>
+                
+                <button id="revealLoveBtn" class="btn-primary">
+                    Reveal Love ✨
+                </button>
+
+                <!-- Floating hearts spawn area -->
+                <div id="heartsContainer" class="hearts-spawn"></div>
+            </div>
+
+            <button class="btn-continue" data-target="puzzle">
+                Continue to Next Surprise 💝
+            </button>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 4: PUZZLE + SLIDESHOW -->
+    <!-- ========================================== -->
+    <section id="puzzle" class="section hidden">
+        <div class="section-container">
+            <h2 class="section-title">Complete us 🧩</h2>
+            
+            <!-- Puzzle Card -->
+            <div class="puzzle-card">
+                <!-- Reference Image -->
+                <div class="puzzle-reference">
+                    <p class="puzzle-reference-label">Complete this image:</p>
+                    <img src="assets/us/Screenshot 2025-12-06 180356.png" alt="Reference" class="reference-image">
+                </div>
+                
+                <!-- Puzzle Grid -->
+                <div id="puzzleContainer" class="puzzle-container">
+                    <!-- Puzzle pieces will be generated by JavaScript -->
+                </div>
+
+                <p class="puzzle-hint">Click two pieces to swap them</p>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn-continue" data-target="wish-wall" id="puzzleContinueBtn" style="display: none;">
+                    Continue to Wish Wall 🎈
+                </button>
+                <button class="btn-continue" id="skipPuzzleBtn">
+                    Skip Puzzle & Continue 💝
+                </button>
+            </div>
+        </div>
+
+        <!-- Puzzle Complete Modal -->
+        <div id="puzzleModal" class="modal hidden">
+            <div class="modal-content">
+                <h2 class="modal-title">You completed us, Khyati 🧩❤️</h2>
+                <p class="modal-text">Now let me tell you something…</p>
+                <div class="voice-message-player">
+                    <p>🎤 Playing voice message...</p>
+                </div>
+                <button id="startSlideshowBtn" class="btn-primary">
+                    Start Slideshow 📸
+                </button>
+                <button id="skipSlideshowBtn" class="btn-continue" style="margin-top: 1rem;">
+                    Skip for Now
+                </button>
+            </div>
+        </div>
+
+        <!-- Slideshow Overlay -->
+        <div id="slideshowOverlay" class="slideshow-overlay hidden">
+            <button id="closeSlideshowBtn" class="close-slideshow">✕</button>
+            <button class="slideshow-nav prev" id="prevSlide">❮</button>
+            <button class="slideshow-nav next" id="nextSlide">❯</button>
+            
+            <div class="slideshow-container">
+                <img id="slideshowImage" src="" alt="Our memories" class="slideshow-image">
+                <p id="slideshowCaption" class="slideshow-caption"></p>
+            </div>
+
+            <div class="slideshow-controls">
+                <button id="pauseSlideshow" class="slideshow-control-btn">⏸️</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 5: WISH WALL -->
+    <!-- ========================================== -->
+    <section id="wish-wall" class="section hidden">
+        <div class="section-container">
+            <h2 class="section-title">Wishes for You, From My Heart 🎈</h2>
+            
+            <div id="balloonsGrid" class="balloons-grid">
+                <!-- Balloons will be generated by JavaScript -->
+            </div>
+
+            <button class="btn-continue" data-target="love-wheel">
+                Continue to Love Wheel 🎡
+            </button>
+        </div>
+
+        <!-- Wish Message Modal -->
+        <div id="wishModal" class="modal hidden">
+            <div class="modal-content">
+                <p id="wishMessage" class="wish-message-text"></p>
+                <button id="closeWishBtn" class="btn-primary">Close 💖</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 6: SPIN THE LOVE WHEEL -->
+    <!-- ========================================== -->
+    <section id="love-wheel" class="section hidden">
+        <div class="section-container">
+            <h2 class="section-title">Spin the Love Wheel 🎡💞</h2>
+            
+            <div class="wheel-card">
+                <div class="wheel-container">
+                    <div class="wheel-pointer">▼</div>
+                    <canvas id="wheelCanvas" width="500" height="500"></canvas>
+                </div>
+
+                <button id="spinBtn" class="btn-primary btn-spin">
+                    Spin Now 💞
+                </button>
+
+                <div id="wheelResult" class="wheel-result hidden">
+                    <p id="wheelResultText"></p>
+                </div>
+            </div>
+
+            <button class="btn-continue" data-target="final">
+                Continue to Final Message 💝
+            </button>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 7: FINAL ENDING SCREEN -->
+    <!-- ========================================== -->
+    <section id="final" class="section hidden">
+        <div class="final-container">
+            <div class="heart-glow">💖</div>
+            <div class="final-message">
+                <p class="final-text">
+                    Thank you for being born, Khyati.<br>
+                    You are the best part of my life.<br>
+                    <span class="highlight">Happy Birthday, My Love ❤️</span><br>
+                    <span class="final-signature">— From the lucky guy who gets to call you his.</span>
+                </p>
+            </div>
+            <button id="replayBtn" class="btn-primary">
+                Replay Experience 🔄
+            </button>
+        </div>
+
+        <!-- Fireworks/Sparkles -->
+        <div class="fireworks-container">
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+        </div>
+    </section>
+
+    <!-- Confetti Canvas (for puzzle completion) -->
+    <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
